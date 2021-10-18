@@ -1,6 +1,7 @@
 package com.example.codingoct18.api
 
 import com.example.codingoct18.model.ResponseDTO
+import com.example.codingoct18.model.ResponseDTOItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,5 +11,8 @@ interface ApiClient {
 
     @GET("people")
     fun getdataByApi(@Query("page")pg:Int): Call<ResponseDTO>
+
+    @GET("people")
+    fun getsearch(@Query("page")pg:Int):ResponseDTO
 
 }

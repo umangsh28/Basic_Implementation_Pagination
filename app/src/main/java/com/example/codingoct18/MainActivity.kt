@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
        viewModell.liveData.observe(this,{
            it.apply {
                CoroutineScope(Dispatchers.IO).launch {
-                   pagingadapter.submitData(lifecycle,it)
+//                   pagingadapter.submitData(lifecycle,it)
                }
            }
        })
