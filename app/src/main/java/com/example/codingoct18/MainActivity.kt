@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.codingoct18.dataBase.ViewModelDatabase
 import com.example.codingoct18.databinding.ActivityMainBinding
 import com.example.codingoct18.model.ResponseDTO
 import com.example.codingoct18.model.ResponseDTOItem
@@ -28,11 +29,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
+      var datalist= mutableListOf<ResponseDTO>()
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         viewModell=ViewModelProvider(this).get(ViewModell::class.java)
+
+
+
         setRecycler()
 
 
@@ -44,7 +53,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+
+
+
+        addingdatatodatabase()
     }
+
+
 
 
     private fun setRecycler() {
@@ -57,4 +72,13 @@ class MainActivity : AppCompatActivity() {
             this.adapter=pagingadapter
         }
     }
+
+
+    private fun addingdatatodatabase() {
+        viewModell.mutableLiveData.observe(this,{
+            datalist.addAll(listOf(it))
+
+        })
+    }
+
 }
