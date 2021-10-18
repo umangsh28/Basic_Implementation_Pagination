@@ -7,36 +7,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.codingoct18.model.ResponseDTO
 import com.example.codingoct18.paging.pagingRepo
-import com.example.codingoct18.repo.Repositary
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class ViewModell() : ViewModel() {
 
-    private val repoo=Repositary()
 
-    val mutableLiveData= MutableLiveData<ResponseDTO>()
-    val liveData:LiveData<ResponseDTO> get() = mutableLiveData
 
 
     private val repositary=pagingRepo()
 
-    fun Paging(){
-        repositary.getpages()
-    }
+    fun Paging()=repositary.getpages()
 
-    fun callapibyView(page:Int){
-        repoo.getDataByRepo(page).enqueue(object : Callback<ResponseDTO>{
-            override fun onResponse(p0: Call<ResponseDTO>, p1: Response<ResponseDTO>) {
-               mutableLiveData.value=p1.body()
-            }
-
-            override fun onFailure(p0: Call<ResponseDTO>, p1: Throwable) {
-                Log.d("Tag",p1.message.toString())
-            }
-        })
-    }
 
 
 }

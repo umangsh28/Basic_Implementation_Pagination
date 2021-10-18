@@ -9,10 +9,10 @@ import retrofit2.http.Query
 interface ApiClient {
     //https://api.tvmaze.com/people?page=1
 
-    @GET("people")
-    fun getdataByApi(@Query("page")pg:Int): Call<ResponseDTO>
+//    @GET("people")
+//    fun getdataByApi(@Query("page")pg:Int): Call<ResponseDTO>
 
     @GET("people")
-    fun getsearch(@Query("page")pg:Int):ResponseDTO
+    fun getsearch(@Query("page")pg:Int):List<ResponseDTOItem>
 
 }

@@ -26,7 +26,7 @@ class pagingadapter : PagingDataAdapter<ResponseDTOItem,holder>(diff){
     }
 
     override fun onBindViewHolder(holder: holder, position: Int) {
-        val res:ResponseDTOItem=getItem(position)!!
+        val res=getItem(position)!!
         holder.setdata(res)
     }
 

@@ -14,6 +14,7 @@ import com.example.codingoct18.recycler.pagingadapter
 import com.example.codingoct18.viewmodel.ViewModell
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
       lateinit var pagingadapter: pagingadapter
 
-      var responseitem= mutableListOf<ResponseDTOItem>()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,22 +33,23 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         callApi()
+
+
+
     }
 
 
 
     private fun callApi() {
        viewModell=ViewModelProvider(this).get(ViewModell::class.java)
-       viewModell.callapibyView(2)
-
         setRecycler()
+        pagingadapter
 
-
-
-       viewModell.liveData.observe(this,{
+       viewModell.Paging().observe(this,{
            it.apply {
-               CoroutineScope(Dispatchers.IO).launch {
-//                   pagingadapter.submitData(lifecycle,it)
+               CoroutineScope(Main).launch {
+                   pagingadapter.submitData(it)
+
                }
            }
        })
