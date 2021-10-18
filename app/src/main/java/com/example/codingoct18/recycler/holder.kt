@@ -12,9 +12,12 @@ class holder(private val itemDesignBinding: ItemDesignBinding):RecyclerView.View
 
 
         itemDesignBinding.dataa=responseDTOItem
-        if(responseDTOItem.birthday==null || responseDTOItem.deathday==null){
-            itemDesignBinding.birth.visibility=View.GONE
-            itemDesignBinding.death.visibility=View.GONE
+        if(responseDTOItem.birthday!=null || responseDTOItem.deathday!=null){
+            itemDesignBinding.birth.visibility=View.VISIBLE
+            itemDesignBinding.death.visibility=View.VISIBLE
+        }else{
+            itemDesignBinding.birth.visibility=View.INVISIBLE
+            itemDesignBinding.death.visibility=View.INVISIBLE
         }
         Glide.with(itemDesignBinding.img1).load(responseDTOItem.image.original).into(itemDesignBinding.img1)
 

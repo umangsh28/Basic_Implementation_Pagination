@@ -12,6 +12,7 @@
    <androidx.cardview.widget.CardView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:backgroundTint="#382653"
        android:layout_margin="10dp"
        >
        <RelativeLayout
@@ -19,30 +20,40 @@
            android:layout_height="wrap_content"
            >
            <androidx.appcompat.widget.AppCompatImageView
-               android:layout_width="89dp"
+               android:layout_width="102dp"
                android:id="@+id/img1"
-               android:layout_height="89dp"/>
+               android:layout_margin="25dp"
+               android:layout_height="99dp"/>
            <androidx.appcompat.widget.AppCompatCheckedTextView
-               android:layout_width="match_parent"
+               android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_toEndOf="@id/img1"
+               android:textColor="@color/black"
+               android:background="#CF245E"
+               android:layout_margin="15dp"
                android:text="@{dataa.name}"
                android:id="@+id/name"
                android:textSize="19dp"
                />
            <androidx.appcompat.widget.AppCompatCheckedTextView
-               android:layout_width="match_parent"
+               android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_toEndOf="@id/img1"
                android:id="@+id/birth"
+               android:textColor="@color/black"
+               android:background="#CF245E"
+               android:layout_margin="15dp"
                android:layout_below="@id/name"
                android:text="@{dataa.birthday}"
                android:textSize="19dp"
                />
            <androidx.appcompat.widget.AppCompatCheckedTextView
-               android:layout_width="match_parent"
+               android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:id="@+id/death"
+               android:background="#CF245E"
+               android:textColor="@color/black"
+               android:layout_margin="15dp"
                android:layout_toEndOf="@id/img1"
                android:layout_below="@id/birth"
                android:text="@{dataa.deathday}"

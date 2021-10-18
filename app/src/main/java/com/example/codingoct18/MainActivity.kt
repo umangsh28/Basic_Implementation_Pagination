@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codingoct18.dataBase.ViewModelDatabase
 import com.example.codingoct18.databinding.ActivityMainBinding
@@ -45,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         setRecycler()
 
 
+
+
         viewModell.Paging().observe(this,{
             it.apply {
                 CoroutineScope(Main).launch {
@@ -65,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     private fun setRecycler() {
 
         pagingadapter= pagingadapter()
-        val linearLayoutManager=LinearLayoutManager(this)
+        val linearLayoutManager=GridLayoutManager(this,2)
 
         activityMainBinding.recycler.apply {
             layoutManager=linearLayoutManager
