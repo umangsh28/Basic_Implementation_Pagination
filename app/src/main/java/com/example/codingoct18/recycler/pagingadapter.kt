@@ -10,7 +10,7 @@ import com.example.codingoct18.databinding.ItemDesignBinding
 import com.example.codingoct18.model.ResponseDTO
 import com.example.codingoct18.model.ResponseDTOItem
 
-class pagingadapter()  : PagingDataAdapter<ResponseDTOItem,holder>(diff){
+class pagingadapter : PagingDataAdapter<ResponseDTOItem,holder>(diff){
 
     companion object{
         val diff=object : DiffUtil.ItemCallback<ResponseDTOItem>(){
@@ -19,7 +19,7 @@ class pagingadapter()  : PagingDataAdapter<ResponseDTOItem,holder>(diff){
             }
 
             override fun areContentsTheSame(oldItem: ResponseDTOItem, newItem: ResponseDTOItem): Boolean {
-                return oldItem.id==newItem.id && oldItem.name == newItem.name
+                return oldItem.id==newItem.id && oldItem.name.equals(newItem.name)
             }
 
         }
