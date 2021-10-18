@@ -11,7 +11,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ViewModell(val repoo:Repositary) : ViewModel() {
+class ViewModell() : ViewModel() {
+
+    private val repoo=Repositary()
 
     val mutableLiveData= MutableLiveData<ResponseDTO>()
     val liveData:LiveData<ResponseDTO> get() = mutableLiveData

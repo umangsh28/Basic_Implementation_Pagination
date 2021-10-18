@@ -6,11 +6,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.codingoct18.databinding.ActivityMainBinding
 import com.example.codingoct18.viewmodel.ViewModell
-import com.example.codingoct18.viewmodel.viewModelfact
 
 class MainActivity : AppCompatActivity() {
       lateinit var viewModell: ViewModell
-      lateinit var viewModelfact: viewModelfact
+
 
       lateinit var activityMainBinding: ActivityMainBinding
 
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
        viewModell.liveData.observe(this,{
            it.apply {
-
+               activityMainBinding.text1.text=it.get(1).name.toString()
            }
        })
     }

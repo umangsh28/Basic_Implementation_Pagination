@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+        <variable
+            name="dataa"
+            type="com.example.codingoct18.model.ResponseDTOItem" />
+
+    </data>
+
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp"
+       >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           >
+           <androidx.appcompat.widget.AppCompatImageView
+               android:layout_width="89dp"
+               android:id="@+id/img1"
+               android:layout_height="89dp"/>
+           <androidx.appcompat.widget.AppCompatCheckedTextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_toEndOf="@id/img1"
+               android:text="@{dataa.name}"
+               android:id="@+id/name"
+               android:textSize="19dp"
+               />
+           <androidx.appcompat.widget.AppCompatCheckedTextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_toEndOf="@id/img1"
+               android:id="@+id/birth"
+               android:layout_below="@id/name"
+               android:text="@{dataa.birthday}"
+               android:textSize="19dp"
+               />
+           <androidx.appcompat.widget.AppCompatCheckedTextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/death"
+               android:layout_toEndOf="@id/img1"
+               android:layout_below="@id/birth"
+               android:text="@{dataa.deathday}"
+               android:textSize="19dp"
+               />
+
+
+
+       </RelativeLayout>
+   </androidx.cardview.widget.CardView>
+
+
+
+
+</layout>
