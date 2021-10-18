@@ -6,6 +6,6 @@ import androidx.paging.liveData
 
 class pagingRepo {
 
-    fun getpages()= Pager(config = PagingConfig(pageSize = 10),pagingSourceFactory = {pagingSource()}).liveData
+    fun getpages()= Pager(config = PagingConfig(pageSize = 20),pagingSourceFactory = {pagingSource()}).liveData
 
 }

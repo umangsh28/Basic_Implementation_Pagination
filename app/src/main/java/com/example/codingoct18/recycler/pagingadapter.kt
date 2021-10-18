@@ -19,7 +19,7 @@ class pagingadapter : PagingDataAdapter<ResponseDTOItem,holder>(diff){
             }
 
             override fun areContentsTheSame(oldItem: ResponseDTOItem, newItem: ResponseDTOItem): Boolean {
-                return oldItem.id==newItem.id && oldItem.name.equals(newItem.name)
+                return oldItem.id==newItem.id && oldItem.name == newItem.name
             }
 
         }

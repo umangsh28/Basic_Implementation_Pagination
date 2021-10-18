@@ -32,28 +32,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityMainBinding= DataBindingUtil.setContentView(this,R.layout.activity_main)
 
-        callApi()
-
-
-
-    }
-
-
-
-    private fun callApi() {
-       viewModell=ViewModelProvider(this).get(ViewModell::class.java)
+        viewModell=ViewModelProvider(this).get(ViewModell::class.java)
         setRecycler()
-        pagingadapter
 
-       viewModell.Paging().observe(this,{
-           it.apply {
-               CoroutineScope(Main).launch {
-                   pagingadapter.submitData(it)
 
-               }
-           }
-       })
+        viewModell.Paging().observe(this,{
+            it.apply {
+                CoroutineScope(Main).launch {
+                    pagingadapter.submitData(it)
+
+                }
+            }
+        })
     }
+
 
     private fun setRecycler() {
 

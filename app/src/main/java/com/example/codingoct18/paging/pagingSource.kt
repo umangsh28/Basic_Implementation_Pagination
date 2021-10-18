@@ -18,7 +18,7 @@ class pagingSource :PagingSource<Int,ResponseDTOItem>(){
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResponseDTOItem> {
         val pagenum=params.key?:1
         val responseDTO=api.getsearch(pagenum)
-        val responseDTO1:List<ResponseDTOItem> = responseDTO 
+        val responseDTO1:List<ResponseDTOItem> = responseDTO
 
         return try{
             LoadResult.Page(

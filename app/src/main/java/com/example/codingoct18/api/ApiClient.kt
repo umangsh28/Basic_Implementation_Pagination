@@ -13,6 +13,6 @@ interface ApiClient {
 //    fun getdataByApi(@Query("page")pg:Int): Call<ResponseDTO>
 
     @GET("people")
-    fun getsearch(@Query("page")pg:Int):List<ResponseDTOItem>
+    suspend fun getsearch(@Query("page")pg:Int):List<ResponseDTOItem>
 
 }
