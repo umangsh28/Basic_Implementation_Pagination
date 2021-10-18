@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     private fun setRecycler() {
 
         pagingadapter= pagingadapter()
-        val linearLayoutManager=GridLayoutManager(this,2)
+        val linearLayoutManager=GridLayoutManager(this,1)
 
         activityMainBinding.recycler.apply {
             layoutManager=linearLayoutManager
